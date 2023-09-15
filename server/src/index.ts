@@ -7,6 +7,8 @@ dotenv.config()
 const app: Application = express()
 const port = process.env.PORT || 8000
 
+const dbURI = process.env.MONGODB_URI || ''
+
 app.get('/', (req: Request, res: Response) => {
     res.send('Hello World!');
 })

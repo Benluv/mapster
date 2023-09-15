@@ -1,0 +1,20 @@
+import { UUID } from "mongodb";
+
+
+class User {
+    public id: number;
+    public name: string;
+    public email: string;
+
+    constructor(id: number, name: string, email: string) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+    }
+
+    static findAll() {
+        return [ new User(1, 'John Doe', 'johndoe@mail.com')]
+    }
+
+}
+export { User };
