@@ -1,4 +1,3 @@
-import React from 'react';
 import Map, {Marker} from 'react-map-gl/maplibre';
 
 
@@ -9,8 +8,8 @@ const MapComponent = () => (
         longitude: -122.4,
         zoom: 14
       }}
-      style={{width: 800, height: 600}}
-      mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
+      style={{width: '100vw', height: '100vh'}}
+      mapStyle="https://api.maptiler.com/maps/basic-v2/style.json?key=QSOPRzVQaFs4mT9pRjCx"
     >
       <Marker longitude={-122.4} latitude={37.8} color="red" />
     </Map>
