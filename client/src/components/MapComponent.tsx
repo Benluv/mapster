@@ -1,4 +1,4 @@
-import Map, { Marker } from 'react-map-gl/maplibre';
+import Map from 'react-map-gl/maplibre';
 import { LocationProps } from './CurrentLocation';
 
 

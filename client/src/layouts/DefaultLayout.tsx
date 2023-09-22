@@ -9,7 +9,7 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
   return (
     <div>
       <Navbar links={links}/>
-      <main>{children}</main>
+      <main className='p-6'>{children}</main>
       <Footer />
     </div>
   );

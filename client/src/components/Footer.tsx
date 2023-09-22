@@ -3,7 +3,7 @@ const Footer: React.FC = () => {
     return (
         <footer className="footer">
         <div className="container">
-            <span className="text-muted">Place sticky footer content here.</span>
+            <span className="text-muted">So long and thank you for all the fish...</span>
         </div>
         </footer>
     );
