@@ -1,5 +1,4 @@
 import CurrentLocation from '../components/CurrentLocation';
-import MapComponent from '../components/MapComponent';
 
 
 const MapContainer = () => ( 

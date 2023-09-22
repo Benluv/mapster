@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import reactLogo from '../assets/react.svg'
 import viteLogo from '/vite.svg'
+import NavBar from '../components/NavBar'
+import Footer from '../components/Footer'
 
 export default function Home() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <NavBar />
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -27,6 +30,7 @@ export default function Home() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <Footer /> 
     </>
   )
 }
