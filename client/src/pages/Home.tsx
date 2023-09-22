@@ -1,35 +1,26 @@
-import { useState } from 'react'
-import reactLogo from '../assets/react.svg'
-import viteLogo from '/vite.svg'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
+import CountComponent from '../components/CountComponent'
 
 export default function Home() {
-  const [count, setCount] = useState(0)
+
+  const links = [
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
+  ]
 
   return (
     <>
-      <NavBar />
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+      <NavBar links={links}/>
+      <div className="container mx-auto bg-gray-200 rounded-xl shadow border p-8 m-10">
+        <p className="text-3xl text-gray-700 font-bold mb-5">
+          Welcome!
+        </p>
+        <p className="text-gray-500 text-lg">
+          React and Tailwind CSS in action
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        <CountComponent />
       <Footer /> 
     </>
   )
