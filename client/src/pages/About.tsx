@@ -1,21 +1,16 @@
 import CurrentLocation from "../components/CurrentLocation"
-import NavBar from "../components/NavBar"
+import DefaultLayout from "../layouts/DefaultLayout"
 
 const About = () => {
-const links = [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' }
-  ]
-
     return(
     <>
-        <NavBar links={links}/>
-        <div>
-            <h1>About</h1>
-            <p>This is the about page</p>
-            <CurrentLocation latitude={0} longitude={0} />
-        </div>
-
+        <DefaultLayout>
+            <div>
+                <h1>About</h1>
+                <p>This is the about page</p>
+                <CurrentLocation latitude={0} longitude={0} />
+            </div>
+        </DefaultLayout>
     </>
     )
 }

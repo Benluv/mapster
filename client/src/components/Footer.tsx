@@ -1,5 +1,5 @@
 
-const Footer = () => {
+const Footer: React.FC = () => {
     return (
         <footer className="footer">
         <div className="container">
@@ -9,4 +9,4 @@ const Footer = () => {
     );
 }
 
-export default Footer
+export { Footer }

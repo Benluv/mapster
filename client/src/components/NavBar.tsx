@@ -15,7 +15,7 @@ interface NavbarProps {
     }>
 }
 
-const NavBar: React.FC<NavbarProps> = ({links}) => {
+const Navbar: React.FC<NavbarProps> = ({links}) => {
     return (
       <nav className="bg-blue-500 py-4 px-4 w-full md:w-auto">
         <div className="container mx-auto">
@@ -40,4 +40,4 @@ const NavBar: React.FC<NavbarProps> = ({links}) => {
     );
 }
 
-export default NavBar;
+export { Navbar }

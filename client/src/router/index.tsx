@@ -2,6 +2,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from '../pages/Home';
 import About from '../pages/About';
 
+const links = [
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
+  ]
+
 const Router = () => {
     return(
         <BrowserRouter>
@@ -13,4 +18,5 @@ const Router = () => {
     )
 }
 
-export default Router;
+export default Router
+export { links };
