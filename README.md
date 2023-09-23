@@ -1,4 +1,4 @@
-**Disclaimer: This README is a conceptual representation and does not contain actual code or instructions for setting up the app. It serves as a template to help you create a detailed README for your project.**
+**Disclaimer: This README is a conceptual representation and does not contain actual code or instructions for setting up the app.**
 
 # Fancy ChatMap App
 
