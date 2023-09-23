@@ -1,4 +1,4 @@
-import CurrentLocation from "../components/CurrentLocation"
+import CurrentLocation from "../components/map/CurrentLocation"
 import DefaultLayout from "../layouts/DefaultLayout"
 
 const About = () => {
