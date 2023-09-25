@@ -1,21 +1,7 @@
 import reactLogo from '../assets/react.svg';
+import { NavProps } from '../router';
 
-const Button: React.FC = () => {
-    return (
-        <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-          Click me
-        </button>
-    );
-}
-
-interface NavbarProps {
-    links: Array<{
-        label: string
-        href: string
-    }>
-}
-
-const Navbar: React.FC<NavbarProps> = ({links}) => {
+const Navbar: React.FC<NavProps> = ({links}) => {
     return (
       <nav className="shadow-md bg-blue-500 py-4 px-4 w-full md:w-auto rounded-lg">
         <div className="container mx-auto">
