@@ -1,4 +1,5 @@
 import { useState } from "react"
+import TodoList from "./TodoList"
 
 interface TodoCardType {
     id: number
@@ -9,6 +10,7 @@ const TodoWrite = () => {
     const [value, setValue] = useState("")
     const [todoCards, setTodoCards] = useState<TodoCardType[]>([])
     
+    // not quite sure how to remove addTodo and removeTodo from TodoWrite.tsx
     const addTodo = (e: React.KeyboardEvent) => {
         if (e.key === "Enter") {
             const newTodoCard: TodoCardType = {
@@ -45,17 +47,11 @@ const TodoWrite = () => {
                 <p className="text-3xl text-gray-700 font-bold mb-5">
                     Todo list
                 </p>
-                <p id='todo-list' className="text-gray-800">
-                    {todoCards.map((todoCard: TodoCardType) => (
-                        <div key={todoCard.id} className="rounded-xl text-lg shadow border p-8 m-10">
-                            {todoCard.text}
-                            <button className="top-0 right-0 bg-gray-200 text-sm text-gray-800" onClick={() => removeTodo(todoCard.id)}>X</button>
-                        </div>
-                    ))}
-                </p>
+                <TodoList todoCards={todoCards} removeTodo={removeTodo} />
             </div>
         </>
     );
 }
 
 export default TodoWrite
+export type { TodoCardType }
