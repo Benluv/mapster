@@ -2,6 +2,7 @@ import express, { Express, Request, Response, Application } from 'express'
 import dotenv from 'dotenv'
 
 //Environment Variables
+console.log('Hello World!')
 dotenv.config()
 
 const app: Application = express()
