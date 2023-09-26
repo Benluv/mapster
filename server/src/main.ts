@@ -1,19 +1,13 @@
-import express, { Express, Request, Response, Application } from 'express'
-import dotenv from 'dotenv'
+import { schema } from './schema'
+import { createYoga } from 'graphql-yoga'
+import { createServer } from 'http'
 
-//Environment Variables
-console.log('Hello World!')
-dotenv.config()
+async function main() {
+    const yoga = createYoga({ schema })
+    const server = createServer(yoga)
+    server.listen(4000, () => {
+        console.log('Server is running on http://localhost:4000/graphql')
+    })
+}
 
-const app: Application = express()
-const port = process.env.PORT || 8000
-
-const dbURI = process.env.MONGODB_URI || ''
-
-app.get('/', (req: Request, res: Response) => {
-    res.send('Hello World!');
-})
-
-app.listen(port, () => {
-    console.log(`Server running on cool port ${port}`)
-})
+main()
