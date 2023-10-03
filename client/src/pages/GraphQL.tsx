@@ -1,34 +1,41 @@
 import DefaultLayout from "../layouts/DefaultLayout";
 import { ApolloProvider, gql, useQuery } from '@apollo/client'
+import { Link, Route } from "react-router-dom";
 import client from "../utils";
 
-const GET_LOCATIONS = gql`
-    query GetLocations {
-        locations {
+const GET_FEED = gql`
+    query GetFeed {
+        feed {
             id
-            name
+            url
             description
-            photo
+            comments {
+            id
+            body
+            }
         }
-    }
+}
 `
 
 function DisplayLocations() {
-    const { loading, error, data } = useQuery(GET_LOCATIONS)
+    const { loading, error, data } = useQuery(GET_FEED)
 
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error : {error.message}</p>
 
-    return data.locations.map(({ id, name, description, photo }: any) => (
+    return data.feed.map(({ id, url, description, comments }: any) => (
         <div key={id}>
-          <h3>{name}</h3>
-          <img width="400" height="250" alt="location-reference" src={`${photo}`} />
-          <br />
-          <b>About this location:</b>
-          <p>{description}</p>
-          <br />
+            {/* returns http://localhost:5173/url instead of url itself */}
+            <a href={url}  target="_blank" className='text-xl'>{url}</a>
+            <p>{description}</p>
+            {comments.map(({ id, body }: any) => (
+                <div key={id}>
+                    <p>{body}</p>
+                </div>
+            ))}
+            <br/>
         </div>
-    ))
+        ))
 }
 
 export default function GraphQL () {
